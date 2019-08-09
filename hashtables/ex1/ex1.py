@@ -10,15 +10,15 @@ def get_indices_of_item_weights(weights, length, limit):
     """
     YOUR CODE HERE
     """
-    for index in range(length):
+    for i in range(length):
 
-        complementary_number = limit - weights[index]
+        complementary_number = limit - weights[i]
         found = hash_table_retrieve(ht, complementary_number)
 
         if found is not None:
-            return (index, found)
+            return (i, found)
 
-        hash_table_insert(ht, weights[index],index)
+        hash_table_insert(ht, weights[i],i)
 
     return None
 
